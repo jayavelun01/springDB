@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 public class Product {
 
     @Id
+    //Object to Table matching
     @Column(name = "prod_id")
     private int prodId;
 
