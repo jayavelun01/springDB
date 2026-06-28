@@ -1,6 +1,7 @@
 package com.productDB.demo.service;
 
 import com.productDB.demo.model.Product;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.productDB.demo.repository.ProductRepo;
@@ -14,6 +15,11 @@ public class ProductService {
 
     @Autowired
     ProductRepo repo;
+
+    @Transactional
+    public Product saveProduct (Product product){
+        return  repo.save(product);
+    }
 
     //Get Product Details
     public List<Product> getProducts() {
@@ -31,7 +37,7 @@ public class ProductService {
     }
 
     //Update product
-    public void updateProduct(@RequestBody Product prod) {
+    public void updateProducts(int prodId, @RequestBody Product prod) {
         repo.save(prod);
     }
 
