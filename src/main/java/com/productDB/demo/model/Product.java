@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,12 +18,14 @@ public class Product {
 
     @Id
     //Object to Table matching
-    @Column(name = "prod_id")
+//    @Column(name = "prod_id")
     private int prodId;
 
-    @Column(name = "prod_name")
+//    @Column(name = "prod_name")
     private String prodName;
 
-    @Column(name = "price")
-    private int price;
+//    @Column(name = "price")
+    private BigDecimal price;
+
+    private String description;
 }
